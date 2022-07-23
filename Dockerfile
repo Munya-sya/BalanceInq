@@ -7,7 +7,7 @@ COPY src /workspace/src
 COPY pom.xml /workspace
 COPY mvnw /workspace
 COPY mvnw.cmd /workspace
-export JAVA_HOME="/usr/lib/jvm/java-8-oracle"
+
 RUN java -version
 
 
