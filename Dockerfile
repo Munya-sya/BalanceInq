@@ -7,4 +7,7 @@ COPY src /workspace/src
 COPY pom.xml /workspace
 COPY mvnw /workspace
 COPY mvnw.cmd /workspace
-RUN mvn clean -DskipTests
+RUN mvn clean --settings configuration/settings.xml -DskipTests
+RUN mvn compile --settings configuration/settings.xml -DskipTests
+RUN mvn clean --settings configuration/settings.xml -DskipTests
+RUN mvn package --settings configuration/settings.xml -DskipTests
