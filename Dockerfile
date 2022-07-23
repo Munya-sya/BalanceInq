@@ -11,3 +11,8 @@ RUN mvn clean --settings configuration/settings.xml -DskipTests
 RUN mvn compile --settings configuration/settings.xml -DskipTests
 RUN mvn clean --settings configuration/settings.xml -DskipTests
 RUN mvn package --settings configuration/settings.xml -DskipTests
+
+FROM openjdk:14-slim
+COPY --from=build /workspace/target/*.jar app.jar
+EXPOSE 6379
+ENTRYPOINT ["java","-jar","app.jar"]
