@@ -7,9 +7,8 @@ COPY src /workspace/src
 COPY pom.xml /workspace
 COPY mvnw /workspace
 COPY mvnw.cmd /workspace
-RUN cd /usr/local/
-RUN ls
 RUN which java
-RUN java -version
+RUN export PATH=/usr/java/openjdk-1.8/bin/java
+RUN which java
 
 
