@@ -10,7 +10,7 @@ COPY mvnw.cmd /workspace
 RUN which java
 RUN mvn clean install --settings configuration/settings.xml -DskipTests
 
-FROM openjdk:14-slim
+FROM openjdk:8-slim
 COPY --from=build /workspace/target/*.jar app.jar
 EXPOSE 6379
 ENTRYPOINT ["java","-jar","app.jar"]
