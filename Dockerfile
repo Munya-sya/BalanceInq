@@ -7,6 +7,8 @@ COPY src /workspace/src
 COPY pom.xml /workspace
 COPY mvnw /workspace
 COPY mvnw.cmd /workspace
+RUN cd /usr/local/
+RUN ls
 RUN which java
 RUN java -version
 
