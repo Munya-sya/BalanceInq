@@ -22,7 +22,7 @@ public class MockProcessor implements Processor {
         logger.info("Received Request: " + jsonInput);
 
         exchange.getOut().setHeader(Exchange.CONTENT_TYPE, "application/json");
-        exchange.getOut().setHeader(Exchange.HTTP_RESPONSE_CODE, 201);
+        exchange.getOut().setHeader(Exchange.HTTP_RESPONSE_CODE, 200);
 
 
         String jsonString = jsonInput.toString();
